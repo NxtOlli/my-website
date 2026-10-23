@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ee">
+    <meta
+      name="description"
+      content="Log ind på Herning Bibliotek og få adgang til dine lån og reservationer."
+    >
+    <title>Log ind – Herning Bibliotek</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Herning Bibliotek – forsiden">
+        <img src="logo.svg" alt="" width="42" height="42">
+        <span>Herning <strong>Bibliotek</strong></span>
+      </a>
+      <a class="header-link" href="#hjælp">Hjælp til login <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="login-card" aria-labelledby="page-title">
+        <div class="form-panel">
+          <div class="form-heading">
+            <span class="section-label">Min side</span>
+            <h1 id="page-title">Log ind</h1>
+            <p>Brug dit bibliotekslogin for at fortsætte.</p>
+          </div>
+
+          <form id="login-form">
+            <div class="field">
+              <label for="user-id">Bruger-id</label>
+              <input
+                id="user-id"
+                name="user-id"
+                type="text"
+                autocomplete="username"
+                placeholder="Fx dit sundhedskortnummer"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <div class="label-row">
+                <label for="password">Adgangskode</label>
+                <button class="text-button" type="button" data-dialog="forgot-dialog">Glemt adgangskode?</button>
+              </div>
+              <div class="password-wrap">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Indtast din adgangskode"
+                  required
+                >
+                <button
+                  class="password-toggle"
+                  type="button"
+                  aria-label="Vis adgangskode"
+                  aria-pressed="false"
+                >Vis</button>
+              </div>
+            </div>
+
+            <button class="login-button" type="submit">
+              <span>Log ind</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="form-divider"><span>Ny på biblioteket?</span></div>
+          <button class="create-button" type="button" data-dialog="create-dialog">
+            Opret bruger <span aria-hidden="true">↗</span>
+          </button>
+          <p class="signup-note">Det er gratis at blive oprettet som låner.</p>
+        </div>
+      </section>
+
+      <nav class="quick-links" aria-label="Nyttige links">
+        <a href="#hjælp" data-dialog="help-dialog">
+          <span class="link-icon" aria-hidden="true">?</span>
+          <span><strong>Brug for hjælp?</strong><small>Find svar på dine spørgsmål</small></span>
+          <span class="link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a href="#kontakt" data-dialog="contact-dialog">
+          <span class="link-icon" aria-hidden="true">✉</span>
+          <span><strong>Kontakt os</strong><small>Vi sidder klar til at hjælpe</small></span>
+          <span class="link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a href="#information" data-dialog="info-dialog">
+          <span class="link-icon" aria-hidden="true">i</span>
+          <span><strong>Yderligere information</strong><small>Læs om lån og lånerkort</small></span>
+          <span class="link-arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <span>Herning Bibliotekerne</span>
+      <span>Viden, oplevelser og fællesskab</span>
+    </footer>
+
+    <dialog class="info-dialog" id="forgot-dialog">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <span class="dialog-kicker">Adgang til din konto</span>
+      <h2>Glemt din adgangskode?</h2>
+      <p>Du kan få hjælp til at nulstille din adgangskode ved at kontakte biblioteket eller besøge os med dit sundhedskort.</p>
+      <a class="dialog-action" href="mailto:bibliotek@herning.dk">Skriv til biblioteket <span aria-hidden="true">→</span></a>
+    </dialog>
+
+    <dialog class="info-dialog" id="create-dialog">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <span class="dialog-kicker">Velkommen til</span>
+      <h2>Bliv låner på biblioteket</h2>
+      <p>Du kan oprette dig som låner med MitID eller ved at møde personligt op på et af Herning Bibliotekernes biblioteker.</p>
+      <a class="dialog-action" href="https://www.herningbib.dk/" target="_blank" rel="noreferrer">Gå til Herning Bibliotek <span aria-hidden="true">↗</span></a>
+    </dialog>
+
+    <dialog class="info-dialog" id="help-dialog">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <span class="dialog-kicker">Vi hjælper gerne</span>
+      <h2>Hjælp til login</h2>
+      <p>Dit bruger-id er typisk CPR-nummeret på dit sundhedskort. Er du i tvivl om dit login, kan biblioteket hjælpe dig.</p>
+      <a class="dialog-action" href="mailto:bibliotek@herning.dk">Få hjælp <span aria-hidden="true">→</span></a>
+    </dialog>
+
+    <dialog class="info-dialog" id="contact-dialog">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <span class="dialog-kicker">Herning Bibliotekerne</span>
+      <h2>Kontakt os</h2>
+      <p>Har du spørgsmål til dit login eller dine lån? Skriv til os, så vender vi tilbage hurtigst muligt.</p>
+      <a class="dialog-action" href="mailto:bibliotek@herning.dk">bibliotek@herning.dk <span aria-hidden="true">→</span></a>
+    </dialog>
+
+    <dialog class="info-dialog" id="info-dialog">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <span class="dialog-kicker">Godt at vide</span>
+      <h2>Lån og lånerkort</h2>
+      <p>Med dit lånerkort kan du reservere materialer, se dine lån og forny dem direkte fra din bibliotekskonto.</p>
+      <a class="dialog-action" href="https://www.herningbib.dk/" target="_blank" rel="noreferrer">Læs mere <span aria-hidden="true">↗</span></a>
+    </dialog>
+  </body>
+</html>
